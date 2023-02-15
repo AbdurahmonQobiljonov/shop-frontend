@@ -1,0 +1,63 @@
+root: true
+env:
+  browser: true
+parser: '@typescript-eslint/parser'
+plugins:
+  - '@typescript-eslint'
+  - import
+  - react
+  - prettier
+  - react-hooks
+extends:
+  - airbnb-base
+  - plugin:@typescript-eslint/eslint-recommended
+  - plugin:@typescript-eslint/recommended
+  - plugin:import/errors
+  - plugin:import/warnings
+  - plugin:react/recommended
+  - plugin:prettier/recommended
+settings:
+  import/resolver:
+    typescript: {}
+  react:
+    version: detect
+rules:
+  camelcase: off
+  prefer-destructuring: off
+  curly: [error, all]
+  brace-style: [error, 1tbs, { allowSingleLine: false }]
+  no-multiple-empty-lines: [error, { max: 1, maxEOF: 0, maxBOF: 0 }]
+  no-use-before-define: [error, { functions: false }]
+  no-underscore-dangle: off
+  no-param-reassign: off
+  no-bitwise: off
+  '@typescript-eslint/no-use-before-define': [error, { functions: false }]
+  '@typescript-eslint/explicit-function-return-type': off
+  '@typescript-eslint/explicit-module-boundary-types': off
+  '@typescript-eslint/no-unused-vars': [error, { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }]
+  '@typescript-eslint/no-shadow': ["error", { "ignoreTypeValueShadow": true }]
+  '@typescript-eslint/no-var-requires': off
+  prefer-arrow-callback: off
+  object-curly-spacing: [error, always]
+  arrow-parens: [error, always]
+  import/extensions: [error, always, { ignorePackages: true }]
+  import/no-extraneous-dependencies:
+    [error, { devDependencies: ['*.config.js'] }]
+  import/prefer-default-export: off
+  react/prop-types: off
+  react/display-name: off
+  react/react-in-jsx-scope: off
+  global-require: off
+  react/jsx-curly-brace-presence: [error, never]
+  react-hooks/rules-of-hooks: error
+  react-hooks/exhaustive-deps: warn
+  no-shadow: off
+  react/no-unescaped-entities: [error, { "forbid": ['>', '\', '}'] }]
+overrides:
+  - files: ['*.ts', '*.tsx']
+    rules:
+      import/extensions: [error, { ts: never, tsx: never }]
+      no-use-before-define: off
+  - files: ['*.stories.tsx']
+    rules:
+      import/no-extraneous-dependencies: off

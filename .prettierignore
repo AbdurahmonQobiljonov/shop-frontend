@@ -1,0 +1,11 @@
+dist
+coverage
+
+*.html
+*.css
+*.less
+*.scss
+
+*.md
+*.yml
+*.json
